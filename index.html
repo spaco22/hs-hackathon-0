@@ -140,29 +140,26 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>Sign Up to learn more!</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<h2>Get More Information!</h2>
+							<p>Sign up for our mailing list to receive updates.</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
+									<form method="post" action="process_form.php" class="cta">
+										<div class="row gtr-uniform gtr-50">
+										  <div class="col-4 col-12-xsmall">
+											<input type="text" name="first_name" id="first_name" placeholder="First Name" required />
+										  </div>
+										  <div class="col-4 col-12-xsmall">
+											<input type="text" name="last_name" id="last_name" placeholder="Last Name" required />
+										  </div>
+										  <div class="col-4 col-12-xsmall">
+											<input type="email" name="email" id="email" placeholder="Email Address" required />
+										  </div>
+										  <div class="col-12">
+											<input type="submit" value="Sign Up" class="fit primary" />
+										  </div>
 										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
+									  </form>
 								</section>
 								<section>
 									<ul class="contact">
@@ -215,6 +212,12 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				// Check for success message in URL
+				const urlParams = new URLSearchParams(window.location.search);
+				if (urlParams.get('signup') === 'success') {
+				  alert('Thank you for signing up!');
+				}
+			  </script>
 	</body>
 </html>
